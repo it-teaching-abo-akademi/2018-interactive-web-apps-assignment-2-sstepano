@@ -58,9 +58,15 @@ function decode() { // decodes the virtual bar code after some checking
         return;
     }
     date = barcode.substring(48, 54);
-    if (!isValidDate(date)) {
-        alert("The date in the format YYMMDD (last 6 digits) is not valid");
-        return;
+    if (date !== "000000") {
+        if (!isValidDate(date)) {
+            alert("The date in the format YYMMDD (last 6 digits) is not valid");
+            return;
+        } else {
+            date = barcode.substring(52, 54) + "." + barcode.substring(50, 52) + "." + "20" + barcode.substring(48, 50) + ".";
+        }
+    } else {
+        date = "None";
     }
     if (barcode.charAt(0) === "4") { // version 4
        ref0 = barcode.substring(28, 48);
@@ -86,12 +92,6 @@ function decode() { // decodes the virtual bar code after some checking
     cents = barcode.substring(23, 25);
     total = amount + "," + cents;
     total = total + " EUR";
-    //date = barcode.substring(48, 54);
-    if (date !== "000000") {
-        date = barcode.substring(52, 54) + "."  + barcode.substring(50, 52) + "." + "20" + barcode.substring(48, 50) + ".";
-    } else {
-        date = "None";
-    }
     document.getElementById("iban").innerHTML = account;
     document.getElementById("amount").innerHTML = total;
     document.getElementById("ref").innerHTML = ref;
