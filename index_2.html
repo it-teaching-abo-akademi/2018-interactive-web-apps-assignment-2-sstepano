@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRsxL7QrqWoXlq1kPg2RLKLttFLL_emOY&callback=myMap" type="text/javascript"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="javascript2.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/barcodes/JsBarcode.code128.min.js" type="text/javascript"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-50 col-100 main">
+            <div class="row">
+                <div class="col-50 col-100">
+                    <label id="lcountry" for="country">Select your country</label>
+                </div>
+                <div class="col-42 col-100">
+                    <select id="country" name="country">
+                        <option value="FI">Finland</option>
+                        <option value="SE">Sweden</option>
+                        <option value="FR">France</option>
+                        <option value="DE">Germany</option>
+                    </select>
+                </div>
+                <div class="col-8 col-100 display"></div>
+            </div>
+            <div class="row">
+                <div class="col-50 col-100">
+                    <label id="lzip" for="zipcode">Zip code</label>
+                </div>
+                <div class="col-42 col-100">
+                    <input type="text" id="zipcode">
+                </div>
+                <div class="col-8 col-100 display"></div>
+            </div>
+            <div class="row">
+                <div class="col-50 col-100"></div>
+                <div class="col-42 col-100">
+                    <button class="button" id="search">Search</button>
+                </div>
+                <div class="col-8 col-100 display"></div>
+            </div>
+        </div>
+        <div class="col-50 col-100 aside">
+            <h3>History of the last 10 searches</h3>
+            <ul id="history">
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-25 col-100 display">
+        </div>
+        <div class="col-50 col-100">
+            <table id="places">
+            </table>
+        </div>
+        <div class="col-25 col-100 display"></div>
+    </div>
+    <div class="row">
+        <div class="col-25 col-100 display"></div>
+        <div id="googleMap" class="col-66 col-100">
+
+        </div>
+        <div class="col-8 col-100 display"></div>
+    </div>
+
+
+</div>
+</body>
+</html>
