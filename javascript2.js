@@ -20,7 +20,7 @@ function search() {
     var country = document.getElementById("country").value;
     //var countryname = document.getElementById("country").option[country];
     var zipcode = document.getElementById("zipcode").value;
-    var request = "http://api.zippopotam.us/" + country + "/" +zipcode;
+    var request = "https://api.zippopotam.us/" + country + "/" +zipcode;
     var [setMarker, setCenter] = (function () {
         var mapProp= {
             //center:new google.maps.LatLng(22.2833, 60.45),
