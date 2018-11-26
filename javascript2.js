@@ -15,7 +15,7 @@ function pageLoad() {
     //document.getElementById("barcode").onblur = returnBackColor;
 }
 function search() {
-    var obj, node, node1, node2, node3, i, places, history, longitudeFirstPlace, latitudeFirstPlace;
+    var obj, node, node1, node2, node3, i, places, history, longitudeFirstPlace, latitudeFirstPlace, latitude, longitude;
     var client = new XMLHttpRequest();
     var country = document.getElementById("country").value;
     //var countryname = document.getElementById("country").option[country];
@@ -24,7 +24,7 @@ function search() {
     var [setMarker, setCenter] = (function () {
         var mapProp= {
             //center:new google.maps.LatLng(22.2833, 60.45),
-            zoom:15,
+            zoom:5,
         };
         var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
         return [function(lat, lon) {
@@ -87,9 +87,9 @@ function search() {
                 node1 = document.createElement("TD");
                 node1.innerHTML = obj['places'][i]['place name'];
                 node2 = document.createElement("TD");
-                node2.innerHTML = obj['places'][i]['longitude'];
+                node2.innerHTML = longitude = obj['places'][i]['longitude'];
                 node3 = document.createElement("TD");
-                node3.innerHTML = obj['places'][i]['latitude'];
+                node3.innerHTML = latitude = obj['places'][i]['latitude'];
                 node.appendChild(node1);
                 node.appendChild(node2);
                 node.appendChild(node3);
@@ -98,7 +98,7 @@ function search() {
             }
             longitudeFirstPlace = obj['places'][0]['longitude'];
             latitudeFirstPlace = obj['places'][0]['latitude'];
-            setCenter(latitudeFirstPlace, longitudeFirstPlace);
+            setCenter(latitudeFirstPlace,  longitudeFirstPlace);
             saveList(country, zipcode);
             showList();
         }
