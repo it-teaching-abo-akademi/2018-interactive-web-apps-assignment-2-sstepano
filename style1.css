@@ -121,21 +121,10 @@ canvas {
         margin-top: 6px;
     }
 
-    .col-16 p{
-        float: right; /* the text of the info section in the first and the third column to be close to the corresponding values in the second and the fourth column, respectively */
-    }
-
-    .col-16 #liban{
-        padding-right: 49px; /* "Payee's IBAN" text to be aligned vertically with "Payment reference" text */
-    }
-
-    .col-16 #ldate{
-        padding-right: 80px; /* "Due date" text to be aligned vertically with "Amount to be paid" text */
-    }
-
     .col-16 label{
         float: right; /* the label to be next to the input text field */
     }
+
     .col-25 {
         float: left;
         width: 25%;
