@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="style2.css">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
     <script src="javascript2.js" type="text/javascript"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRsxL7QrqWoXlq1kPg2RLKLttFLL_emOY&callback=myMap" type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRsxL7QrqWoXlq1kPg2RLKLttFLL_emOY" type="text/javascript"></script>
     <title>Title</title>
 </head>
 <body>
@@ -55,6 +55,11 @@
         </div>
         <div class="col-50 col-100">
             <table id="places">
+                <tr>
+                    <th>Place name</th>
+                    <th>Longitude</th>
+                    <th>Latitude</th>
+                </tr>
             </table>
         </div>
         <div class="col-25 col-100 display"></div>
@@ -62,11 +67,10 @@
     <div class="row">
         <div class="col-25 col-100 display"></div>
         <div id="googleMap" class="col-66 col-100">
-
         </div>
         <div class="col-8 col-100 display"></div>
     </div>
-
+    <div id="result" class="row"></div>
 
 </div>
 </body>

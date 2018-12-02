@@ -8,16 +8,14 @@ html {
 .display {
     display: none; /* hides redundant empty div-s */
 }
-.info {
-    float: left;
-    padding-top: 30px;
-    padding-bottom: 20px;
-    border: 3px solid black;
-    width: 100%;
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 .aside {
     float: left;
-    /*width: 50%;*/
     margin-top: 6px;
     padding: 15px 15px;
     border: 1px solid black;
@@ -38,16 +36,15 @@ html {
     text-decoration: none;
 }
 
-h3 {text-align: center;}
+h3 {text-align: left;}
 
 .main {
     float: left;
     padding: 0 15px;
-    /*width: 50%;*/
     font-size: 12px;
 }
 
-input[type=text], select, textarea {
+input[type=text], select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -110,31 +107,21 @@ label {
     background-color: white;
     padding: 15px;
 }
-/*        #liban {font-weight: bold;}
-        #lamount {font-weight: bold;}
-        #lref {font-weight: bold;}
-        #ldate {font-weight: bold;}*/
-#hide{
-    float: right;
-    margin-top: 30px;
-    margin-right: 20px;
-}
+
 .col-100 {
     float: left;
     width: 100%;
     margin-top: 6px;
     font-size: 12px;
 }
-.col-100 p {
-    float: left;
-}
-
 
 /* For tablets: */
 @media only screen and (min-width: 600px) {
     .col-100 {font-size: 13px;}
     .aside {width: 50%;}
     .main {width: 50%;}
+    h3 {text-align: center;}
+    .aside {margin-top: 15px;}
 }
 /* For desktop: */
 @media screen and (min-width: 768px) {
@@ -158,9 +145,6 @@ label {
         width: 16.66%;
         margin-top: 6px;
     }
-    .col-16 p{
-        float: right;
-    }
     .col-16 label{
         float: right;
     }
@@ -177,18 +161,11 @@ label {
         float: right;
     }
 
-    .col-16 #liban{
-        padding-right: 46px;
-    }
 
     .col-33 {
         float: left;
         width: 33.33%;
         margin-top: 6px;
-    }
-
-    .col-16 #ldate{
-        padding-right: 76px;
     }
 
     .col-42 {
@@ -203,20 +180,10 @@ label {
         margin-top: 6px;
     }
 
-    #googleMap {
-        height: 300px;
-    }
-
     .col-58 {
         float: left;
         width: 58.33%;
         margin-top: 6px;
-    }
-
-    .col-58 #hide{
-        float: right;
-        margin-top: 30px;
-        margin-right: 20px;
     }
 
     .col-66 {
@@ -225,27 +192,16 @@ label {
         margin-top: 6px;
     }
 
-    .col-66 #hide{
-        float: right;
-        margin-top: 30px;
-        margin-right: 20px;
-    }
-
     .col-75 {
         float: left;
         width: 75%;
         margin-top: 6px;
     }
 
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
     .container {margin: 40px}
 
     #googleMap {
+        height: 300px;
         margin-top: 30px;
     }
 
