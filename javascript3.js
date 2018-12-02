@@ -45,6 +45,7 @@ function findSingleTripOfRoute() {
     var busline = buslineHTML.value; // route id
     var routeShortName = buslineHTML.options[buslineHTML.selectedIndex].text;
     var request = "https://data.foli.fi/gtfs/trips/route/" + busline;
+    map.setZoom(11);
     if(typeof(Storage) !== "undefined") {
         if (!(sessionStorage.busline && sessionStorage.busline === busline)) { // if the currently selected bus line is not consecutively selected line by one of 2 Show buttons
             sessionStorage.busline = busline; // new bus line
@@ -132,6 +133,7 @@ function findLocationsOfBuses() {
     var busline = buslineHTML.value;
     var routeShortName = buslineHTML.options[buslineHTML.selectedIndex].text;
     var request = "https://data.foli.fi/siri/vm";
+    map.setZoom(11);
     if(typeof(Storage) !== "undefined") {
         if (!(sessionStorage.busline && sessionStorage.busline === busline)) { // if the currently selected bus line is not consecutively selected line by one of 2 Show buttons
             sessionStorage.busline = busline; // new bus line
@@ -186,12 +188,13 @@ function refresh() {
     var busline;
     var routeShortName;
     var request = "https://data.foli.fi/siri/vm";
+    map.setZoom(11);
     if(typeof(Storage) !== "undefined") {
-        if (sessionStorage.busline) { // if a bus line is already selected by one of 3 buttons
+        if (sessionStorage.busline) { // if a bus line is already selected by pressing at least once one of 2 Show buttons
             busline = sessionStorage.busline; // old line
             routeShortName = sessionStorage.routeShortName;
             setCenter(latitudeMiddlePlace, longitudeMiddlePlace); // old middle place
-        } else { // before any of 2 Show buttons are pressed first time and when refresh button is pressed first time in the current session
+        } else { // refresh button is pressed before any of 2 Show buttons are pressed first time in the current session 
             buslineHTML = document.getElementById("busline");
             busline = buslineHTML.value; // new bus line
             routeShortName = buslineHTML.options[buslineHTML.selectedIndex].text;
