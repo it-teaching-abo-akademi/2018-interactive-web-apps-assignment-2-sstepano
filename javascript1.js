@@ -63,7 +63,7 @@ function decode() { // decodes the virtual bar code after some checking
             alert("The date in the format YYMMDD (last 6 digits) is not valid");
             return;
         } else {
-            date = barcode.substring(52, 54) + "." + barcode.substring(50, 52) + "." + "20" + barcode.substring(48, 50) + ".";
+            date = barcode.substring(52, 54) + "." + barcode.substring(50, 52) + "." + "20" + barcode.substring(48, 50);
         }
     } else {
         date = "None";
