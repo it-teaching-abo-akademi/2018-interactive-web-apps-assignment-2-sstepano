@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="javascript3url.js" type="text/javascript"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRsxL7QrqWoXlq1kPg2RLKLttFLL_emOY" type="text/javascript"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div>
+            <label id="lbusline" for="busline">Select the bus line:</label>
+        </div>
+        <div class="col-16 col-25">
+            <select id="busline">
+
+            </select>
+        </div>
+        <div class="col-66 display col-100"></div>
+    </div>
+    <div class="row">
+        <div class="col-16 col-50">
+            <button id="showb" class="button">Show buses</button>
+        </div>
+        <div class="col-33 display col-100">
+        </div>
+        <div class="col-16 col-50">
+            <button id="refresh" class="button">refresh</button>
+        </div>
+        <div class="col-33 col-100">
+            <button class="button" id="showr">Show route</button>
+        </div>
+    </div>
+    <div class="row">
+        <div id="googleMap">
+        </div>
+    </div>
+    <div id="result" class="row"></div>
+
+</div>
+</body>
+</html>
