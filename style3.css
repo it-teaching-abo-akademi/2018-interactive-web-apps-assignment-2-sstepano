@@ -1,42 +1,24 @@
-/* For mobile phones */
+/* For mobile phones and tablets */
 * {
     box-sizing: border-box;
 }
-/* Responsive layout - when the screen is less than 768px wide, make the three or four columns stack on top of each other instead of next to each other */
+
 html {
     font-family: "Lucida Sans", sans-serif;
 }
+
 /* Clear floats after the columns */
-.row {
-    display: flex;
-}
 .row:after {
     content: "";
     display: table;
     clear: both;
-}
-/* Information section */
-.info {
-    float: left;
-    padding: 30px 15px 20px; /* 15px wide left and right paddings */
-    border: 3px solid black;
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-input[type=text] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
 }
 
 .display {
     display: none; /* hides redundant empty div-s */
 }
 
-input[type=text], select, textarea {
+select {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -62,8 +44,6 @@ label {
     font-size: 16px;
     margin-top: 40px;
     cursor: pointer;
-    /*height: 70px;*/
-    /*width: 120px;  fixed width because different text appears in the button "Hide" (or "Show") */
 }
 
 #googleMap {
@@ -78,20 +58,11 @@ label {
     padding: 15px 15px;
 }
 
-#liban {font-weight: bold;}
-#lamount {font-weight: bold;}
-#lref {font-weight: bold;}
-#ldate {font-weight: bold;}
-
 .col-100 {
     float: left;
     width: 100%;
     margin-top: 6px;
     font-size: 12px;
-}
-
-.col-100 p {
-    float: left;
 }
 
 .col-50 {
@@ -100,23 +71,18 @@ label {
     margin-top: 6px;
 }
 
-.col-50 #hide {
-    float: right; /* only the hide button floating to the right in this mode*/
+.col-50 #refresh {
+    float: right; /* only the refresh button floating to the right in this mode*/
 }
 
-/* For tablets: */
-@media only screen and (min-width: 600px) {
-    /*.col-100 {font-size: 14px;}*/
-    .col-100 {
-        font-size: 14px;
-    }
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
 }
+
 /* For desktop: */
 @media screen and (min-width: 768px) {
- /*   .col-100 {
-        font-size: 16px;
-        display: block;
-    }*/
 
     .display {
         display: block; /* displays empty div-s needed to sum up total width up to 100% */
@@ -131,32 +97,7 @@ label {
 
     .col-16 {
         float: left;
-        /*width: 16.66%;*/
-        margin-top: 6px;
-    }
-
-    .col-16 p{
-        float: right; /* the text of the info section in the first and the third column to be close to the corresponding values in the second and the fourth column, respectively */
-    }
-
-    .col-16 #liban{
-        padding-right: 49px; /* "Payee's IBAN" text to be aligned vertically with "Payment reference" text */
-    }
-    .col-16 #lamount {
-        margin-left: 20px;
-    }
-    .col-16 #ldate{
-        padding-right: 80px; /* "Due date" text to be aligned vertically with "Amount to be paid" text */
-    }
-    .col-16 #ldate {
-        margin-left: 30px;
-    }
-    /*label{*/
-        /*float: right;  the label to be next to the input text field */
-   /* }*/
-    .col-25 {
-        float: left;
-        width: 25%;
+        width: 16.66%;
         margin-top: 6px;
     }
 
@@ -164,7 +105,15 @@ label {
         float: left;
         width: 33.33%;
         margin-top: 6px;
-        padding-left: 5px;  /* space between the text and the corresponding value */
+    }
+
+    .col-33 #showr {
+        /* applies only to the Show routes button */
+        float: right;
+    }
+
+    .col-50 #refresh {
+        float: left;
     }
 
     .col-58 {
@@ -172,12 +121,6 @@ label {
         width: 58.33%;
         margin-top: 6px;
     }
-
- /*   .col-58 #hide{
-        float: right;
-        margin-top: 30px;
-        margin-right: 20px;
-    }*/
 
     .col-66 {
         float: left;
@@ -189,12 +132,6 @@ label {
         float: left;
         width: 41.66%;
         margin-top: 6px;
-    }
-
-    .col-42 #showr {
-        /* applies only to the hide button */
-        float: right;
-        /*margin-right: 0;*/
     }
 
     .col-75 {
