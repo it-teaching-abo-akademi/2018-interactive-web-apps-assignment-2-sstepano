@@ -88,9 +88,16 @@ function decode() { // decodes the virtual bar code after some checking
     } else {
         amount = "0";
     }
+    if (amount.length === 4) {
+        amount = amount.substring(0, 1) + "," + amount.substring(1, 4);
+    } else if (amount.length === 5) {
+        amount = amount.substring(0, 2) + "," + amount.substring(2, 5);
+    } else if (amount.length === 6) {
+        amount = amount.substring(0, 3) + "," + amount.substring(3, 6);
+    }
     account = account.substring(0, 2) + " " + account.substring(2, 6) + " " + account.substring(6, 10) + " " + account.substring(10, 14) + " " + account.substring(14, 16); // output to be displayed on the screen
     cents = barcode.substring(23, 25);
-    total = amount + "," + cents;
+    total = amount + "." + cents;
     total = total + " EUR";
     document.getElementById("iban").innerHTML = account;
     document.getElementById("amount").innerHTML = total;
